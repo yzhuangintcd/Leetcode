@@ -26,4 +26,8 @@ class Solution {
         }
         return map.get(n);
     }
+    public static void main(String [] args){
+        Solution tester = new Solution();
+        System.out.println(tester.climbStairs(10)); // should be 89
+    }
 }
