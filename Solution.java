@@ -119,7 +119,7 @@ class Solution {
         // for (int i= 0; i < tester.findErrorNums(arr).length; i++ ){
         //     System.out.print(tester.findErrorNums(arr)[i] + ", "); 
         // }
-        
+        // change
         System.out.println(tester.firstUniqChar("loveleetcode"));
     }
 }
