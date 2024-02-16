@@ -171,18 +171,70 @@ class Solution {
         return true;
     }
 
+    public int[] rearrangeArray(int[] nums) {
+        
+        // base case
+
+        if (nums.length == 2){
+            if (nums[0] > 0){
+                return nums;
+            }
+            else {
+                int temp = nums[0];
+                nums[0] = nums[1];
+                nums[1] = temp;
+            }
+        }
+
+        int[] positiveArray = new int[nums.length/2];
+        int[] negativeArray = new int[nums.length/2];
+        int pIndex = 0;
+        int nIndex = 0;
+
+        for (int i = 0; i < nums.length; i++){
+            if (nums[i] > 0){
+                positiveArray[pIndex] = nums[i];
+                pIndex++;
+            }
+            else {
+                negativeArray[nIndex] = nums[i];
+                nIndex++;
+            }
+        }
+
+        // check the arrays
+        // printArray(positiveArray);
+        // printArray(negativeArray);
+
+        pIndex = 0;
+        nIndex = 0;
+
+        int [] answer = new int [nums.length];
+        for (int i = 0; i < answer.length; i++){
+            if (i % 2 == 0){
+                answer[i] = positiveArray[pIndex];
+                pIndex++;
+            }
+            else {
+                answer[i] = negativeArray[nIndex];
+                nIndex++;
+            }
+        }
+
+        return answer;
+    }
+
+    public void printArray(int[] arr){
+        for(int i = 0; i < arr.length; i++){
+            System.out.print(arr[i] + " ");
+        }
+        System.out.println();
+    }
     public static void main(String[] args) {
         Solution tester = new Solution();
 
-        int[] arr = { 3, 3, 4 };
-        // for (int i= 0; i < tester.findErrorNums(arr).length; i++ ){
-        // System.out.print(tester.findErrorNums(arr)[i] + ", ");
-        // }
-        // change
-
-        // System.out.println(tester.firstUniqChar("loveleetcode"));
-
-        String [] s = {"abc","car","ada","racecar","cool"};
-        System.out.println(tester.firstPalindrome(s));
+        int[] arr = {1, -1};
+        // String [] s = {"abc","car","ada","racecar","cool"};
+        tester.printArray(tester.rearrangeArray(arr));
     }
 }
