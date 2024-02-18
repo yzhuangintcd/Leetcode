@@ -130,11 +130,10 @@ class Solution {
         Integer answer = 0;
         Map<Integer, Integer> map = new HashMap<>();
 
-        for (int i = 0; i < nums.length; i++){
-            if (!map.containsKey(nums[i])){
+        for (int i = 0; i < nums.length; i++) {
+            if (!map.containsKey(nums[i])) {
                 map.put(nums[i], 1);
-            }
-            else{
+            } else {
                 int k = map.get(nums[i]);
                 k++;
                 map.replace(nums[i], k);
@@ -143,28 +142,29 @@ class Solution {
 
         System.out.println(map);
         answer = (Collections.max(map.values()));
-        for (Map.Entry<Integer, Integer> entry : map.entrySet() ){
-            if (answer.equals(entry.getValue())){
+        for (Map.Entry<Integer, Integer> entry : map.entrySet()) {
+            if (answer.equals(entry.getValue())) {
                 answer = entry.getKey();
                 break;
             }
         }
         return answer;
     }
-    
+
     public String firstPalindrome(String[] words) {
-        for (int i = 0; i < words.length; i++){
-            if (isPalindrome(words[i])){
+        for (int i = 0; i < words.length; i++) {
+            if (isPalindrome(words[i])) {
                 return words[i];
             }
         }
         return "";
     }
 
-    private boolean isPalindrome (String word){
-        if (word.length() == 1 || word.length() == 0) return true;
-        for (int i = 0, j = word.length() - 1; i < word.length()/2; i++, j--){
-            if (word.charAt(i) != word.charAt(j)){
+    private boolean isPalindrome(String word) {
+        if (word.length() == 1 || word.length() == 0)
+            return true;
+        for (int i = 0, j = word.length() - 1; i < word.length() / 2; i++, j--) {
+            if (word.charAt(i) != word.charAt(j)) {
                 return false;
             }
         }
@@ -172,31 +172,29 @@ class Solution {
     }
 
     public int[] rearrangeArray(int[] nums) {
-        
+
         // base case
 
-        if (nums.length == 2){
-            if (nums[0] > 0){
+        if (nums.length == 2) {
+            if (nums[0] > 0) {
                 return nums;
-            }
-            else {
+            } else {
                 int temp = nums[0];
                 nums[0] = nums[1];
                 nums[1] = temp;
             }
         }
 
-        int[] positiveArray = new int[nums.length/2];
-        int[] negativeArray = new int[nums.length/2];
+        int[] positiveArray = new int[nums.length / 2];
+        int[] negativeArray = new int[nums.length / 2];
         int pIndex = 0;
         int nIndex = 0;
 
-        for (int i = 0; i < nums.length; i++){
-            if (nums[i] > 0){
+        for (int i = 0; i < nums.length; i++) {
+            if (nums[i] > 0) {
                 positiveArray[pIndex] = nums[i];
                 pIndex++;
-            }
-            else {
+            } else {
                 negativeArray[nIndex] = nums[i];
                 nIndex++;
             }
@@ -209,13 +207,12 @@ class Solution {
         pIndex = 0;
         nIndex = 0;
 
-        int [] answer = new int [nums.length];
-        for (int i = 0; i < answer.length; i++){
-            if (i % 2 == 0){
+        int[] answer = new int[nums.length];
+        for (int i = 0; i < answer.length; i++) {
+            if (i % 2 == 0) {
                 answer[i] = positiveArray[pIndex];
                 pIndex++;
-            }
-            else {
+            } else {
                 answer[i] = negativeArray[nIndex];
                 nIndex++;
             }
@@ -224,17 +221,31 @@ class Solution {
         return answer;
     }
 
-    public void printArray(int[] arr){
-        for(int i = 0; i < arr.length; i++){
+    public void rotate(int[] nums, int k) {
+        if (nums.length == 1 || nums.length % k == 0)
+            return;
+        LinkedList<Integer> list = new LinkedList<>();
+        for (int i = 0; i < nums.length; i++) {
+            
+        }
+
+    }
+
+    public void printArray(int[] arr) {
+        for (int i = 0; i < arr.length; i++) {
             System.out.print(arr[i] + " ");
         }
         System.out.println();
     }
+
     public static void main(String[] args) {
         Solution tester = new Solution();
 
-        int[] arr = {1, -1};
+        int[] arr = {10, 56, 4, 78, 7, 98, 4, 98};
         // String [] s = {"abc","car","ada","racecar","cool"};
-        tester.printArray(tester.rearrangeArray(arr));
+        // tester.printArray(tester.rearrangeArray(arr));
+
+        
     }
 }
+
