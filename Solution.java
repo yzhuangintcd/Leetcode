@@ -231,6 +231,54 @@ class Solution {
 
     }
 
+        public boolean isPowerOfTwo(int n) {
+        // the iterative solution:
+
+        int temp = n; // set temp = n, don't want to change n itself
+
+        // edge case
+        if (n == 0){
+            return false;
+        }
+        // while (temp != 1){
+
+        //     if (temp % 2 != 0){
+        //         return false;
+        //     }
+
+        //     temp = temp / 2;
+        // }
+        // return true;
+
+        // the non iterative solution: does not work yet
+        
+        double checker = log2(temp);
+        int x = (int) checker;
+        double y = checker - x;
+
+        if (y == 0){
+            return true;
+        }
+
+        return false;
+
+    }
+
+    private static double log2 (int N ){
+        return Math.log(N) / Math.log(2);
+    }
+
+    public int missingNumber(int[] nums) {
+        int numberOfElement = nums.length;
+
+        Arrays.sort(nums);
+        for (int i = 0; i < nums.length; i++){
+            if (i != nums[i]) return i;
+        }
+
+        return numberOfElement;
+    }
+
     public void printArray(int[] arr) {
         for (int i = 0; i < arr.length; i++) {
             System.out.print(arr[i] + " ");
@@ -238,14 +286,18 @@ class Solution {
         System.out.println();
     }
 
+
     public static void main(String[] args) {
         Solution tester = new Solution();
 
-        int[] arr = {10, 56, 4, 78, 7, 98, 4, 98};
+        int[] arr = {9,6,4,2,3,5,7,0,1};
         // String [] s = {"abc","car","ada","racecar","cool"};
-        // tester.printArray(tester.rearrangeArray(arr));
 
+        System.out.println(tester.isPowerOfTwo(536870912)); // true
+        System.out.println(tester.isPowerOfTwo(3)); // false
         
+
+        System.out.println(tester.missingNumber(arr));
     }
 }
 
