@@ -226,37 +226,37 @@ class Solution {
             return;
         LinkedList<Integer> list = new LinkedList<>();
         for (int i = 0; i < nums.length; i++) {
-            
+
         }
 
     }
 
-        public boolean isPowerOfTwo(int n) {
+    public boolean isPowerOfTwo(int n) {
         // the iterative solution:
 
         int temp = n; // set temp = n, don't want to change n itself
 
         // edge case
-        if (n == 0){
+        if (n == 0) {
             return false;
         }
         // while (temp != 1){
 
-        //     if (temp % 2 != 0){
-        //         return false;
-        //     }
+        // if (temp % 2 != 0){
+        // return false;
+        // }
 
-        //     temp = temp / 2;
+        // temp = temp / 2;
         // }
         // return true;
 
         // the non iterative solution: does not work yet
-        
+
         double checker = log2(temp);
         int x = (int) checker;
         double y = checker - x;
 
-        if (y == 0){
+        if (y == 0) {
             return true;
         }
 
@@ -264,7 +264,7 @@ class Solution {
 
     }
 
-    private static double log2 (int N ){
+    private static double log2(int N) {
         return Math.log(N) / Math.log(2);
     }
 
@@ -272,8 +272,9 @@ class Solution {
         int numberOfElement = nums.length;
 
         Arrays.sort(nums);
-        for (int i = 0; i < nums.length; i++){
-            if (i != nums[i]) return i;
+        for (int i = 0; i < nums.length; i++) {
+            if (i != nums[i])
+                return i;
         }
 
         return numberOfElement;
@@ -286,13 +287,18 @@ class Solution {
         System.out.println();
     }
 
-    public class TreeNode 
-    {
+    public class TreeNode {
         int val;
         TreeNode left;
         TreeNode right;
-        TreeNode() {}
-        TreeNode(int val) { this.val = val; }
+
+        TreeNode() {
+        }
+
+        TreeNode(int val) {
+            this.val = val;
+        }
+
         TreeNode(int val, TreeNode left, TreeNode right) {
             this.val = val;
             this.left = left;
@@ -300,12 +306,15 @@ class Solution {
         }
     }
 
-public boolean isSameTree(TreeNode p, TreeNode q) {
+    public boolean isSameTree(TreeNode p, TreeNode q) {
 
-        if (p == null && q == null) return true;
-        if (p == null && q != null) return false;
-        if (p != null && q == null) return false;
-        
+        if (p == null && q == null)
+            return true;
+        if (p == null && q != null)
+            return false;
+        if (p != null && q == null)
+            return false;
+
         StringBuilder p1 = new StringBuilder();
         StringBuilder q1 = new StringBuilder();
 
@@ -315,50 +324,123 @@ public boolean isSameTree(TreeNode p, TreeNode q) {
         System.out.println(p1);
         System.out.println(q1);
 
-        if (p1.compareTo(q1) == 0){
+        if (p1.compareTo(q1) == 0) {
             return true;
         }
         return false;
     }
 
     // this function appends the p in inorder traversal ontpo s
-    private void treeToString(TreeNode p, StringBuilder s){
-        if (p == null){
+    private void treeToString(TreeNode p, StringBuilder s) {
+        if (p == null) {
             s.append("null");
-            
-        }
-        else {
+
+        } else {
             s.append(p.val);
         }
 
         if (p.left != null) {
             treeToString(p.left, s);
-        }
-        else {
+        } else {
             s.append("null");
-            
+
         }
-        
+
         if (p.right != null) {
             treeToString(p.right, s);
-        }else {
+        } else {
             s.append("null");
         }
+    }
+
+    public String maximumOddBinaryNumber(String s) {
+        // rearrange the bits 
+        // move the first "1" to the start 
+        // then move the rest of the onees to the front
+        // because if LSB = 1, = odd number
+        // move other "1"s to the start to make it maximum
+        if (s.length() == 1){
+            if (s.charAt(0) == '1') return "1";
+        }
+
+        StringBuilder sb = new StringBuilder();
+
+        // int takenOne = -1;
+        // //iterate through the string
+        // // find the first "1"
+        // for(int i = 0; i < s.length(); i++){
+        //     if (s.charAt(i) == '1'){
+        //         sb.append(s.charAt(i));
+        //         takenOne = i;
+        //         break;
+        //     }
+        // }
+
+
+        // for (int i = 0; i < s.length(); i++){
+
+        //     if (i == takenOne ){
+        //         continue;
+        //     }
+        //     if (s.charAt(i) == '1'){
+        //         sb.insert(0, s.charAt(i));
+        //     }
+            
+        // }
+        int count1s = 0;
+        for (int i = 0; i < s.length(); i++){
+            if (s.charAt(i) == '1'){
+                count1s++;
+            }
+        }
+
+        int count0s = s.length() - count1s;
+
+        if (count1s == 1){
+            while(count0s != 0){
+                sb.append('0');
+                count0s--;
+            }
+            sb.append('1');
+            return sb.toString();
+        }
+
+        for (int i = 0; i < s.length(); i++){
+            if (count1s == 1) break;
+            while (count1s != 1){
+                sb.append('1');
+                count1s--;
+            }
+        }
+
+        while (count0s != 0){
+            sb.append('0');
+            count0s--;
+        }
+
+        
+        sb.append('1');
+        
+
+        return sb.toString();
+
+        // try something different 
+        // - count the amount of 1's
+
+
     }
 
     public static void main(String[] args) {
         Solution tester = new Solution();
 
-        int[] arr = {9,6,4,2,3,5,7,0,1};
+        int[] arr = { 9, 6, 4, 2, 3, 5, 7, 0, 1 };
         // String [] s = {"abc","car","ada","racecar","cool"};
 
-        System.out.println(tester.isPowerOfTwo(536870912)); // true
-        System.out.println(tester.isPowerOfTwo(3)); // false
-        
+        // System.out.println(tester.isPowerOfTwo(536870912)); // true
+        // System.out.println(tester.isPowerOfTwo(3)); // false
 
-        System.out.println(tester.missingNumber(arr));
+        // System.out.println(tester.missingNumber(arr));
 
-        
+        System.out.println(tester.maximumOddBinaryNumber("00011"));
     }
 }
-
