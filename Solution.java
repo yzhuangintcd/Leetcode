@@ -468,10 +468,24 @@ class Solution {
 
         return freq;
     }
+
+    public int getCommon(int[] nums1, int[] nums2) {
+
+        for (int i = 0; i < nums1.length; i++){
+            if (Arrays.binarySearch(nums2, nums1[i]) >= 0){
+                return nums1[i];
+            }
+        }
+        
+        return -1;
+    }
+
     public static void main(String[] args) {
         Solution tester = new Solution();
 
         int[] arr = {1,2,2,3,1,4};
+        int[] num1 = {1,2,3,6};
+        int[] num2 = {2,3,4,5};
         // String [] s = {"abc","car","ada","racecar","cool"};
 
         // System.out.println(tester.isPowerOfTwo(536870912)); // true
@@ -479,6 +493,6 @@ class Solution {
 
         // System.out.println(tester.missingNumber(arr));
 
-        System.out.println(tester.maxFrequencyElements(arr));
+        System.out.println(tester.getCommon(num1, num2));
     }
 }
