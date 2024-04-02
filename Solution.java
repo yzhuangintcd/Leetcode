@@ -222,12 +222,12 @@ class Solution {
     }
 
     // public void rotate(int[] nums, int k) {
-    //     if (nums.length == 1 || nums.length % k == 0)
-    //         return;
-    //     LinkedList<Integer> list = new LinkedList<>();
-    //     for (int i = 0; i < nums.length; i++) {
+    // if (nums.length == 1 || nums.length % k == 0)
+    // return;
+    // LinkedList<Integer> list = new LinkedList<>();
+    // for (int i = 0; i < nums.length; i++) {
 
-    //     }
+    // }
 
     // }
 
@@ -354,13 +354,14 @@ class Solution {
     }
 
     public String maximumOddBinaryNumber(String s) {
-        // rearrange the bits 
-        // move the first "1" to the start 
+        // rearrange the bits
+        // move the first "1" to the start
         // then move the rest of the onees to the front
         // because if LSB = 1, = odd number
         // move other "1"s to the start to make it maximum
-        if (s.length() == 1){
-            if (s.charAt(0) == '1') return "1";
+        if (s.length() == 1) {
+            if (s.charAt(0) == '1')
+                return "1";
         }
 
         StringBuilder sb = new StringBuilder();
@@ -369,35 +370,34 @@ class Solution {
         // //iterate through the string
         // // find the first "1"
         // for(int i = 0; i < s.length(); i++){
-        //     if (s.charAt(i) == '1'){
-        //         sb.append(s.charAt(i));
-        //         takenOne = i;
-        //         break;
-        //     }
+        // if (s.charAt(i) == '1'){
+        // sb.append(s.charAt(i));
+        // takenOne = i;
+        // break;
         // }
-
+        // }
 
         // for (int i = 0; i < s.length(); i++){
 
-        //     if (i == takenOne ){
-        //         continue;
-        //     }
-        //     if (s.charAt(i) == '1'){
-        //         sb.insert(0, s.charAt(i));
-        //     }
-            
+        // if (i == takenOne ){
+        // continue;
+        // }
+        // if (s.charAt(i) == '1'){
+        // sb.insert(0, s.charAt(i));
+        // }
+
         // }
         int count1s = 0;
-        for (int i = 0; i < s.length(); i++){
-            if (s.charAt(i) == '1'){
+        for (int i = 0; i < s.length(); i++) {
+            if (s.charAt(i) == '1') {
                 count1s++;
             }
         }
 
         int count0s = s.length() - count1s;
 
-        if (count1s == 1){
-            while(count0s != 0){
+        if (count1s == 1) {
+            while (count0s != 0) {
                 sb.append('0');
                 count0s--;
             }
@@ -405,47 +405,46 @@ class Solution {
             return sb.toString();
         }
 
-        for (int i = 0; i < s.length(); i++){
-            if (count1s == 1) break;
-            while (count1s != 1){
+        for (int i = 0; i < s.length(); i++) {
+            if (count1s == 1)
+                break;
+            while (count1s != 1) {
                 sb.append('1');
                 count1s--;
             }
         }
 
-        while (count0s != 0){
+        while (count0s != 0) {
             sb.append('0');
             count0s--;
         }
 
-        
         sb.append('1');
-        
 
         return sb.toString();
 
-        // try something different 
+        // try something different
         // - count the amount of 1's
 
-
     }
+
     public int maxFrequencyElements(int[] nums) {
         HashMap<Integer, Integer> map = new HashMap<>();
         // key, value
         // nums[i], occurences
 
         // O(N^2)
-        for (int i = 0; i < nums.length; i++){
+        for (int i = 0; i < nums.length; i++) {
             int temp = nums[i];
             int j = i + 1;
             int occurences = 1;
-            while (j < nums.length){
-                if (temp == nums[j]){
+            while (j < nums.length) {
+                if (temp == nums[j]) {
                     occurences++;
                 }
                 j++;
             }
-            if (!map.containsKey(nums[i])){
+            if (!map.containsKey(nums[i])) {
                 map.put(nums[i], occurences);
             }
         }
@@ -453,15 +452,15 @@ class Solution {
         int max = 0;
         int freq = 0;
 
-        // this for loops gets me the max value 
-        for (int value : map.values()){
-            if (value >= max){
+        // this for loops gets me the max value
+        for (int value : map.values()) {
+            if (value >= max) {
                 max = value;
             }
         }
 
-        for (int value : map.values()){
-            if (value == max){
+        for (int value : map.values()) {
+            if (value == max) {
                 freq += value;
             }
         }
@@ -471,21 +470,54 @@ class Solution {
 
     public int getCommon(int[] nums1, int[] nums2) {
 
-        for (int i = 0; i < nums1.length; i++){
-            if (Arrays.binarySearch(nums2, nums1[i]) >= 0){
+        for (int i = 0; i < nums1.length; i++) {
+            if (Arrays.binarySearch(nums2, nums1[i]) >= 0) {
                 return nums1[i];
             }
         }
-        
+
         return -1;
+    }
+
+    public boolean isIsomorphic(String s, String t) {
+        // assign the letter of each string a value -> Hashmap
+        // iterate through the 2 string at the same index
+        // each character's value (for the 2 letter) must be the same
+        // we can use 2 separate loops to do this, count the iteration
+        // of the letter
+        HashMap<Character, Character> mapS = new HashMap<>();
+        HashMap<Character, Character> mapT = new HashMap<>();
+
+        for (int i = 0; i < s.length(); i++) {
+            char charS = s.charAt(i);
+            char charT = t.charAt(i);
+
+            if (mapS.containsKey(charS)) {
+                if (mapS.get(charS) != charT) {
+                    return false;
+                }
+            } else {
+                mapS.put(charS, charT);
+            }
+
+            if (mapT.containsKey(charT)) {
+                if (mapT.get(charT) != charS) {
+                    return false;
+                }
+            } else {
+                mapT.put(charT, charS);
+            }
+        }
+
+        return true;
     }
 
     public static void main(String[] args) {
         Solution tester = new Solution();
 
-        int[] arr = {1,2,2,3,1,4};
-        int[] num1 = {1,2,3,6};
-        int[] num2 = {2,3,4,5};
+        int[] arr = { 1, 2, 2, 3, 1, 4 };
+        int[] num1 = { 1, 2, 3, 6 };
+        int[] num2 = { 2, 3, 4, 5 };
         // String [] s = {"abc","car","ada","racecar","cool"};
 
         // System.out.println(tester.isPowerOfTwo(536870912)); // true
@@ -493,6 +525,6 @@ class Solution {
 
         // System.out.println(tester.missingNumber(arr));
 
-        System.out.println(tester.getCommon(num1, num2));
+        System.out.println(tester.isIsomorphic("bbbaaaba", "aaabbbba"));
     }
 }
