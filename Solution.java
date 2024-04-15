@@ -1,6 +1,7 @@
 import java.util.*;
 
 class Solution {
+
     public int climbStairs(int n) {
         // We can find that if there is x stairs(x is a number),
         // the number of ways to climb is the ways to climb x-1 plus the ways to climb
@@ -287,7 +288,7 @@ class Solution {
         System.out.println();
     }
 
-    public class TreeNode {
+    public static class TreeNode {
         int val;
         TreeNode left;
         TreeNode right;
@@ -351,6 +352,31 @@ class Solution {
         } else {
             s.append("null");
         }
+    }
+
+    
+
+    public int sumOfLeftLeaves(TreeNode root) {
+        // check if a leave is a left leave
+        // if yes add to the sum
+        int sum;
+        if (root == null)
+            return 0;
+        sum = sumOfLeftLeaves(root, false);
+        return sum;
+    }
+
+    private int sumOfLeftLeaves(TreeNode root, boolean isLeft) {
+
+        if (root == null)
+            return 0;
+        if (root.left == null && isLeft && root.right == null) {
+            return root.val;
+        }
+        int leftSum = sumOfLeftLeaves(root.left, true);
+        int rightSum = sumOfLeftLeaves(root.right, false);
+
+        return leftSum + rightSum;
     }
 
     public String maximumOddBinaryNumber(String s) {
@@ -518,6 +544,12 @@ class Solution {
         int[] arr = { 1, 2, 2, 3, 1, 4 };
         int[] num1 = { 1, 2, 3, 6 };
         int[] num2 = { 2, 3, 4, 5 };
+
+        TreeNode temp = new TreeNode(3, new TreeNode(9), new TreeNode(20));
+        temp.right.left = new TreeNode(15);
+        temp.right.right = new TreeNode(7);
+
+        System.out.println(tester.sumOfLeftLeaves(temp));
         // String [] s = {"abc","car","ada","racecar","cool"};
 
         // System.out.println(tester.isPowerOfTwo(536870912)); // true
@@ -525,6 +557,6 @@ class Solution {
 
         // System.out.println(tester.missingNumber(arr));
 
-        System.out.println(tester.isIsomorphic("bbbaaaba", "aaabbbba"));
+        // System.out.println(tester.isIsomorphic("bbbaaaba", "aaabbbba"));
     }
 }
