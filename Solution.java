@@ -2,34 +2,7 @@ import java.util.*;
 
 class Solution {
 
-    public int climbStairs(int n) {
-        // We can find that if there is x stairs(x is a number),
-        // the number of ways to climb is the ways to climb x-1 plus the ways to climb
-        // x-2
-        HashMap<Integer, Integer> map = new HashMap<>();
-
-        if (n == 0 || n == 1)
-            return 1;
-        if (n == 2 || n == 3)
-            return n;
-        map.put(0, 1);
-        map.put(1, 1);
-        map.put(2, 2);
-        map.put(3, 3);
-        // else return climbStairs(n-1) + climbStairs(n-2);
-        // 0 -> 1
-        // 1 -> 1
-        // 2 -> 2
-        // 3 -> 3
-        // 4 -> 5
-        // 5 -> 8
-        // ...
-        for (int i = 4; i <= n; i++) {
-            map.put(i, map.get(i - 1) + map.get(i - 2));
-        }
-        return map.get(n);
-    }
-
+    // This does not work :(
     public int[] findErrorNums(int[] nums) {
         int[] answer = new int[2];
         int j = 1;
@@ -43,28 +16,6 @@ class Solution {
         return answer;
     }
 
-    // this is NOT a good solution
-    public List<Integer> sequentialDigits(int low, int high) {
-        List<Integer> list = new LinkedList<>();
-        int arr[] = { 12, 23, 34, 45, 56, 67, 78, 89,
-                123, 234, 345, 456, 567, 678, 789,
-                1234, 2345, 3456, 4567, 5678, 6789,
-                12345, 23456, 34567, 45678, 56789,
-                123456, 234567, 345678, 456789,
-                1234567, 2345678, 3456789,
-                12345678, 23456789,
-                123456789 };
-
-        for (int i = 0; i < arr.length; i++) {
-            if (arr[i] >= low && arr[i] <= high) {
-                list.add(arr[i]);
-            }
-            if (arr[i] > high) {
-                break;
-            }
-        }
-        return list;
-    }
 
     public int firstUniqChar(String s) {
         // use a stack - not a good idea
@@ -354,8 +305,6 @@ class Solution {
         }
     }
 
-    
-
     public int sumOfLeftLeaves(TreeNode root) {
         // check if a leave is a left leave
         // if yes add to the sum
@@ -377,6 +326,11 @@ class Solution {
         int rightSum = sumOfLeftLeaves(root.right, false);
 
         return leftSum + rightSum;
+    }
+
+    public int sumNumbers(TreeNode root){
+
+        return 0;
     }
 
     public String maximumOddBinaryNumber(String s) {
