@@ -2,33 +2,34 @@ import java.util.*;
 
 public class Solution {
 
-    // This does not work :(
     public int[] findErrorNums(int[] nums) {
         int[] answer = new int[2];
-        answer[0] = 0;
-        // find the repeating number first
-        for (int i = 0; i < nums.length; i++) {
-            for (int j = 1; j < nums.length; j++) {
-                if (nums[i] == nums[j]) {
-                    answer[0] = nums[i];
-                    break;
-                }
+
+        Hashtable<Integer, Boolean> table = new Hashtable<>();
+        int n = nums.length;
+        int expectedSum = (n * (n + 1) / 2);
+        int sum = 0;
+        // iterate through the array
+        // place each "new" instance into the hash table
+        // a num has already been stored in the hashtable then we have found the
+        // repeating num
+
+        // then the missing num should only be in the range of
+        // repeated num - 1 > repeated num > repeated num + 1
+        // we iterate through the array again and match the indices
+
+        for (int num : nums) {
+            if (!table.containsKey(num)){
+                table.put(num, true);
             }
-            if (nums[i] != 0) {
-                break;
+            else {
+                answer[0] = num;
             }
+            sum += num;
         }
 
-        int missingNumber = 1;
-        for (int i = 1; i < nums.length; i++) {
-            // this number is not missing
-            if (nums[i] == missingNumber) {
-                missingNumber++;
-                continue;
-            }
-        }
+        answer[1] = expectedSum - sum + answer[0];
 
-        answer[1] = missingNumber;
         return answer;
     }
 
@@ -54,7 +55,8 @@ public class Solution {
 
     public static void main(String[] args) {
         Solution tester = new Solution();
-        int[] arr1 = { 1, 2, 2, 4 };
+        int[] arr1 = { 1, 2, 4, 4 };
+        int[] arr2 = { 1, 2, 2, 4 };
 
         int[] arr = tester.findErrorNums(arr1);
         tester.printArray(arr);
