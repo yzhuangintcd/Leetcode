@@ -1,6 +1,6 @@
-import java.util.*;
+import java.util.HashMap;
 
-public class Solution {
+public class climbStairs {
     public int climbStairs(int n) {
         // We can find that if there is x stairs(x is a number),
         // the number of ways to climb is the ways to climb x-1 plus the ways to climb

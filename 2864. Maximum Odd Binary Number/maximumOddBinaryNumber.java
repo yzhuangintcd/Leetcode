@@ -1,6 +1,4 @@
-import java.util.*;
-
-public class Solution {
+public class maximumOddBinaryNumber {
     public String maximumOddBinaryNumber(String s) {
         // rearrange the bits
         // move the first "1" to the start

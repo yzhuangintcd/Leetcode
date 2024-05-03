@@ -1,6 +1,4 @@
-import java.util.*;
-
-public class Solution {
+public class findIntersectionValues {
     public int[] findIntersectionValues(int[] nums1, int[] nums2) {
         int[] answer = new int[2]; // Return an integer array answer of size 2 containing the two values...
         int index = 0;

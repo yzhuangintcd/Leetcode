@@ -1,6 +1,4 @@
-import java.util.*;
-
-public class Solution {
+public class isPowerOfTwo {
     public boolean isPowerOfTwo(int n) {
         // the iterative solution:
 

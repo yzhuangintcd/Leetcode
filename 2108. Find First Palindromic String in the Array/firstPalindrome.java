@@ -1,7 +1,5 @@
-import java.util.*;
-
-public class Solution {
-        public String firstPalindrome(String[] words) {
+public class firstPalindrome {
+    public String firstPalindrome(String[] words) {
         for (int i = 0; i < words.length; i++) {
             if (isPalindrome(words[i])) {
                 return words[i];

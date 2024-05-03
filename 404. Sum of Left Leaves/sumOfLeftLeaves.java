@@ -1,6 +1,4 @@
-import java.util.*;
-
-public class Solution {
+public class sumOfLeftLeaves {
     public int sumOfLeftLeaves(TreeNode root) {
         // check if a leave is a left leave
         // if yes add to the sum

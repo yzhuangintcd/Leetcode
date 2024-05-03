@@ -1,6 +1,7 @@
-import java.util.*;
+import java.util.LinkedList;
+import java.util.List;
 
-public class Solution {
+public class sequentialDigits {
     // this is NOT a good solution
     public List<Integer> sequentialDigits(int low, int high) {
         List<Integer> list = new LinkedList<>();

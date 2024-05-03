@@ -1,6 +1,4 @@
-import java.util.*;
-
-public class Solution {
+public class firstUniqChar {
     public int firstUniqChar(String s) {
         // use a stack - not a good idea
         int answer = -1;

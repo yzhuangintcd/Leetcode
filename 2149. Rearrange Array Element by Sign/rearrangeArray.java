@@ -1,6 +1,4 @@
-import java.util.*;
-
-public class Solution {
+public class rearrangeArray {
     public int[] rearrangeArray(int[] nums) {
 
         // base case

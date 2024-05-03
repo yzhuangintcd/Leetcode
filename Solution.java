@@ -1,21 +1,36 @@
 import java.util.*;
 
-class Solution {
+public class Solution {
 
     // This does not work :(
     public int[] findErrorNums(int[] nums) {
         int[] answer = new int[2];
-        int j = 1;
-        for (int i = 0; i < nums.length; i++, j++) {
-            if (nums[i] != j) {
-                answer[0] = i;
-                answer[1] = j;
+        answer[0] = 0;
+        // find the repeating number first
+        for (int i = 0; i < nums.length; i++) {
+            for (int j = 1; j < nums.length; j++) {
+                if (nums[i] == nums[j]) {
+                    answer[0] = nums[i];
+                    break;
+                }
+            }
+            if (nums[i] != 0) {
                 break;
             }
         }
+
+        int missingNumber = 1;
+        for (int i = 1; i < nums.length; i++) {
+            // this number is not missing
+            if (nums[i] == missingNumber) {
+                missingNumber++;
+                continue;
+            }
+        }
+
+        answer[1] = missingNumber;
         return answer;
     }
-
 
     // not finished yet
     public int numSquares(int n) {
@@ -37,40 +52,11 @@ class Solution {
         System.out.println();
     }
 
-    public int[] findIntersectionValues(int[] nums1, int[] nums2) {
-        int[] answer = new int[2]; // Return an integer array answer of size 2 containing the two values...
-        int index = 0;
-        int count1 = 0;
-        int count2 = 0;
-        for (int i = 0; i < nums1.length; i++) {
-            int temp = nums1[i];
-            for (int j = 0; j < nums2.length; j++) {
-                if (temp == nums2[j]) {
-                    count1++;
-                    break;
-                }
-            }
-        }
-        for (int i = 0; i < nums2.length; i++) {
-            int temp = nums2[i];
-            for (int j = 0; j < nums1.length; j++) {
-                if (temp == nums1[j]) {
-                    count2++;
-                    break;
-                }
-            }
-        }
-        answer[0] = count1;
-        answer[1] = count2;
-        return answer;
-    }
-
     public static void main(String[] args) {
         Solution tester = new Solution();
-        int [] arr1 = {3,4,2,3};
-        int [] arr2 = {1,5};
+        int[] arr1 = { 1, 2, 2, 4 };
 
-        int [] intersection = tester.findIntersectionValues(arr1, arr2);
-        tester.printArray(intersection);
+        int[] arr = tester.findErrorNums(arr1);
+        tester.printArray(arr);
     }
 }
