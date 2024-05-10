@@ -5,5 +5,5 @@
 
 - The folders follows a structure of: "Problem Number. Problem Name".
 
-- The Solution.java outside of the folder is used for testing and debugging, it also includes some problems that I am currently stuck on.
+- The Solution.java outside of the folders is used for testing and debugging, it also includes some problems that I am currently stuck on.
 
