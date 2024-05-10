@@ -1,4 +1,4 @@
-public class firstUniqChar {
+public class firstUniqCharSolution {
     public int firstUniqChar(String s) {
         // use a stack - not a good idea
         int answer = -1;

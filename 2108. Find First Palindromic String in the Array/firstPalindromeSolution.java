@@ -1,4 +1,4 @@
-public class firstPalindrome {
+public class firstPalindromeSolution {
     public String firstPalindrome(String[] words) {
         for (int i = 0; i < words.length; i++) {
             if (isPalindrome(words[i])) {

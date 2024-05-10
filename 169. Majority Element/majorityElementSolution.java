@@ -2,7 +2,7 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 
-public class majorityElement {
+public class majorityElementSolution {
     public int majorityElement(int[] nums) {
         Integer answer = 0;
         Map<Integer, Integer> map = new HashMap<>();

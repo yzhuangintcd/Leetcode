@@ -1,4 +1,4 @@
-public class sumOfLeftLeaves {
+public class sumOfLeftLeavesSolution {
     public int sumOfLeftLeaves(TreeNode root) {
         // check if a leave is a left leave
         // if yes add to the sum

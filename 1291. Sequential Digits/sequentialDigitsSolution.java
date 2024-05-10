@@ -1,7 +1,7 @@
 import java.util.LinkedList;
 import java.util.List;
 
-public class sequentialDigits {
+public class sequentialDigitsSolution {
     // this is NOT a good solution
     public List<Integer> sequentialDigits(int low, int high) {
         List<Integer> list = new LinkedList<>();

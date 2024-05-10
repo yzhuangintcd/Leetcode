@@ -1,5 +1,5 @@
 
-public class reversePrefix {
+public class reversePrefixSolution {
     public String reversePrefix(String word, char ch) {
         // first find ch in word
         // if char not in word

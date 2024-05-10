@@ -1,4 +1,4 @@
-public class maximumOddBinaryNumber {
+public class maximumOddBinaryNumberSolution {
     public String maximumOddBinaryNumber(String s) {
         // rearrange the bits
         // move the first "1" to the start

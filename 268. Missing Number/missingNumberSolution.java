@@ -1,6 +1,6 @@
 import java.util.Arrays;
 
-public class missingNumber {
+public class missingNumberSolution {
     public int missingNumber(int[] nums) {
         int numberOfElement = nums.length;
 

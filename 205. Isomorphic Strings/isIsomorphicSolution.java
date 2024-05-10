@@ -1,6 +1,6 @@
 import java.util.HashMap;
 
-public class isIsomorphic {
+public class isIsomorphicSolution {
     public boolean isIsomorphic(String s, String t) {
         // assign the letter of each string a value -> Hashmap
         // iterate through the 2 string at the same index

@@ -1,6 +1,6 @@
 import java.util.HashMap;
 
-public class maxFrequencyElements {
+public class maxFrequencyElementsSolution {
     public int maxFrequencyElements(int[] nums) {
         HashMap<Integer, Integer> map = new HashMap<>();
         // key, value

@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class findErrorNums {
+public class findErrorNumsSolution {
 
     // 41 / 49
     // public int[] findErrorNums(int[] nums) {

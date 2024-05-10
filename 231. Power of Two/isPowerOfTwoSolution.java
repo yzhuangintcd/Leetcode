@@ -1,4 +1,4 @@
-public class isPowerOfTwo {
+public class isPowerOfTwoSolution {
     public boolean isPowerOfTwo(int n) {
         // the iterative solution:
 

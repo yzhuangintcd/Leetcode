@@ -1,5 +1,5 @@
 
-public class pivotInteger {
+public class pivotIntegerSolution {
     public int pivotInteger(int n) {
 
         // find the total sum

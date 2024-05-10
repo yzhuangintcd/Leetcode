@@ -1,4 +1,4 @@
-public class rearrangeArray {
+public class rearrangeArraySolution {
     public int[] rearrangeArray(int[] nums) {
 
         // base case

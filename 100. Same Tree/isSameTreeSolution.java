@@ -1,4 +1,4 @@
-public class isSameTree {
+public class isSameTreeSolution {
     public boolean isSameTree(TreeNode p, TreeNode q) {
 
         if (p == null && q == null)

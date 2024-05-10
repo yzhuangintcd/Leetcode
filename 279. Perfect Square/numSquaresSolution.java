@@ -1,5 +1,5 @@
 
-public class numSquares {
+public class numSquaresSolution {
     private boolean isPerfectSquare(int n) {
         double temp = n;
         temp = Math.sqrt(temp);

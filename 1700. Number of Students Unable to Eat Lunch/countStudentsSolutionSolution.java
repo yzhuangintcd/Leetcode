@@ -1,7 +1,7 @@
 import java.util.LinkedList;
 import java.util.Queue;
 
-public class countStudents {
+public class countStudentsSolutionSolution {
     public static Queue<Integer> arrayToQueue(int[] array) {
         Queue<Integer> queue = new LinkedList<>();
         for (int num : array) {
