@@ -3,7 +3,7 @@ import java.util.*;
 public class Solution {
 
 
-    // Helper Function to print out arrays of int
+    // Helper Function to print out array of int
     public void printArray(int[] arr) {
         for (int i = 0; i < arr.length; i++) {
             System.out.print(arr[i] + " ");
@@ -11,7 +11,22 @@ public class Solution {
         System.out.println();
     }
 
+    // Helper Function to print out 2d array of int
+    public void printGrid(int[][] grid) {
+        for (int i = 0; i < grid.length; i++) {
+            for (int j = 0; j < grid[i].length; j++) {
+                System.out.print(grid[i] + " ");
+            }
+            System.out.println();
+        }
+        System.out.println();
+    }
+
     public static void main(String[] args) {
+
+        int[][] test1 = { { 0, 0, 1, 1 }, { 1, 0, 1, 0 }, { 1, 1, 0, 0 } };
+        int[][] test2 = {{0}};
         Solution tester = new Solution();
+
     }
 }
