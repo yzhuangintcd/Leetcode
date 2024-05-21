@@ -6,14 +6,14 @@ public class subsetXORSumSolutionIterative {
     public int subsetXORSum(int[] nums) {
         int xorSum = 0;
         List<List<Integer>> lists = subsets(nums, xorSum);
-        // for (int i = 0; i < lists.size(); i++) {
-        //     List<Integer> list = lists.get(i);
-        //     int sum = 0;
-        //     for (int j = 0; j < list.size(); j++) {
-        //         sum ^= list.get(j);
-        //     }
-        //     xorSum += sum;
-        // }
+        for (int i = 0; i < lists.size(); i++) {
+            List<Integer> list = lists.get(i);
+            int sum = 0;
+            for (int j = 0; j < list.size(); j++) {
+                sum ^= list.get(j);
+            }
+            xorSum += sum;
+        }
         return xorSum;
     }
 
