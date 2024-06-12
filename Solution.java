@@ -1,14 +1,13 @@
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
-import java.util.Hashtable;
 import java.util.List;
-import java.util.Map;
+
 
 public class Solution {
 
-
     // Helper Function to print out array of int
-    public void printArray(char[] arr) {
+    public void printArray(int[] arr) {
         for (int i = 0; i < arr.length; i++) {
             System.out.print(arr[i] + " ");
         }
@@ -28,8 +27,6 @@ public class Solution {
 
     public static void main(String[] args) {
         Solution s = new Solution();
-        int arr[] = { 4, 5, 0, -2, -3, 1 };
-        int k = 5;
     }
 
 }
