@@ -2,43 +2,31 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
 
 public class Solution {
-    public int minMovesToSeat(int[] seats, int[] students) {
-        int minMoves = 0;
-        // ArrayList<Integer> seatList = new ArrayList<>();
-        // ArrayList<Integer> studentList = new ArrayList<>();
-        // for (int i = 0; i < students.length; i++) {
-        // seatList.add(seats[i]);
-        // }
-        // for (int i = 0; i < students.length; i++) {
-        // studentList.add(students[i]);
-        // }
-        // Collections.sort(seatList);
-        // Collections.sort(studentList);
-        Arrays.sort(seats);
-        Arrays.sort(students);
-        for (int i = 0; i < students.length; i++) {
-            minMoves += Math.abs(seats[i] - students[i]);
+    public int minIncrementForUnique(int[] nums) {
+        int increments = 0;
+        Arrays.sort(nums);
+        int prev = nums[0];
+        for (int i = 1; i < nums.length; i++) {
+            if (nums[i] <= prev) {
+                increments += prev + 1 - nums[i];
+                nums[i] = prev + 1;
+            }
+            prev = nums[i];
         }
-        // int minI = -1;
-        // int minJ = -1;
-        // for (int i = 0; i < studentList.size();) {
-        // int min = Integer.MAX_VALUE;
-        // for (int j = 0; j < seatList.size(); j++) {
-        // if (Math.abs(studentList.get(i) - seatList.get(j)) <= min) {
-        // min = Math.abs(studentList.get(i) - seatList.get(j));
-        // minI = i;
-        // minJ = j;
-        // }
-        // }
-        // minMoves += min;
-        // studentList.remove(minI);
-        // seatList.remove(minJ);
-        // }
-        return minMoves;
+        return increments;
     }
+
+    // private boolean uniqueArray(int[] nums) {
+    // Set set = new HashSet(Arrays.asList(nums));
+    // if (nums.length == set.size()) {
+    // return true;
+    // } else
+    // return false;
+    // }
 
     // Helper Function to print out array of int
     public void printArray(int[] arr) {
@@ -61,9 +49,9 @@ public class Solution {
 
     public static void main(String[] args) {
         Solution s = new Solution();
-        int[] seats = { 3,1,5 };
-        int[] students = { 2,7,4 };
-        System.out.println(s.minMovesToSeat(seats, students));
+        int[] arr = { 1, 2, 2 };
+
+        System.out.println(s.minIncrementForUnique(arr));
     }
 
 }
