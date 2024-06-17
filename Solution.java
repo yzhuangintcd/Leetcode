@@ -4,29 +4,19 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
+import java.util.PriorityQueue;
 
 public class Solution {
-    public int minIncrementForUnique(int[] nums) {
-        int increments = 0;
-        Arrays.sort(nums);
-        int prev = nums[0];
-        for (int i = 1; i < nums.length; i++) {
-            if (nums[i] <= prev) {
-                increments += prev + 1 - nums[i];
-                nums[i] = prev + 1;
-            }
-            prev = nums[i];
-        }
-        return increments;
-    }
 
-    // private boolean uniqueArray(int[] nums) {
-    // Set set = new HashSet(Arrays.asList(nums));
-    // if (nums.length == set.size()) {
-    // return true;
-    // } else
-    // return false;
-    // }
+    public int findMaximizedCapital(int k, int w, int[] profits, int[] capital) {
+        int maxCapital = 0;
+        int currCapital = w;
+        PriorityQueue<Integer> profitPq = new PriorityQueue<>();
+        for (int i = 0; i < profits.length; i++) {
+            profitPq.offer(profits[i]);
+        }
+        return maxCapital;
+    }
 
     // Helper Function to print out array of int
     public void printArray(int[] arr) {
@@ -49,9 +39,12 @@ public class Solution {
 
     public static void main(String[] args) {
         Solution s = new Solution();
-        int[] arr = { 1, 2, 2 };
+        int[] profits = { 1, 2, 2 }; // profit of each projects
+        int[] capital = { 0, 1, 1 }; // capital of each projects
+        int k = 2; // number of projects
+        int w = 0; // initial capital
+        // System.out.println(s.findMaximizedCapital(k, w, profits, capital));
 
-        System.out.println(s.minIncrementForUnique(arr));
     }
 
 }
