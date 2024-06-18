@@ -43,7 +43,6 @@ public class Solution {
         int[] capital = { 0, 1, 1 }; // capital of each projects
         int k = 2; // number of projects
         int w = 0; // initial capital
-        // System.out.println(s.findMaximizedCapital(k, w, profits, capital));
 
     }
 
