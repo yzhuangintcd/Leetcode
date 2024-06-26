@@ -10,6 +10,53 @@ import java.util.PriorityQueue;
 
 public class Solution {
 
+    public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
+
+        // edge case
+        if (l1.val == 0 && l2.val == 0)
+            return new ListNode(0);
+
+        long tmp1 = 0;
+        long tmp2 = 0;
+        long tmpAnswer = 0;
+        long multiplier = 1;
+
+        // add the two numbers up to get an int
+
+        while (l1 != null) {
+            tmp1 += (l1.val * multiplier);
+            l1 = l1.next;
+            multiplier *= 10;
+        }
+
+        multiplier = 1;
+
+        while (l2 != null) {
+            tmp2 += (l2.val * multiplier);
+            l2 = l2.next;
+            multiplier *= 10;
+        }
+
+        tmpAnswer = tmp1 + tmp2;
+
+        ListNode lead = new ListNode(0);
+        ListNode answer = lead;
+        // testing // return new ListNode (tmp2);
+        while (tmpAnswer > 0) {
+            ListNode temp = new ListNode((int) tmpAnswer % 10);
+            tmpAnswer /= 10;
+            answer.next = temp;
+            answer = answer.next;
+
+            // ListNode extraNode = new ListNode(tmpAnswer%10);
+            // //answer.val = tmpAnswer % 10;
+            // tmpAnswer = tmpAnswer / 10;
+            // answer.next = extraNode;
+            // answer = answer.next;
+        }
+        return lead.next;
+    }
+
     public int numSubarraysWithSum(int[] nums, int goal) {
         int answer = 0;
         // prefix sum method
@@ -120,6 +167,22 @@ public class Solution {
         // int[] nums = { 0, 1, 0, 1, 0, 1, 0, 1, 0 };
         // int goal = 4;
         // System.out.println(s.numSubarraysWithSum(nums, goal));
+
+        ListNode node11 = new ListNode(2);
+        ListNode node12 = new ListNode(4);
+        ListNode node13 = new ListNode(3);
+
+        node11.next = node12;
+        node12.next = node13;
+
+        ListNode node21 = new ListNode(5);
+        ListNode node22 = new ListNode(6);
+        ListNode node23 = new ListNode(4);
+
+        node21.next = node22;
+        node22.next = node23;
+
+        s.addTwoNumbers(node11, node21).printListNode();
 
     }
 
