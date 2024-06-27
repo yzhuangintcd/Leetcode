@@ -168,21 +168,6 @@ public class Solution {
         // int goal = 4;
         // System.out.println(s.numSubarraysWithSum(nums, goal));
 
-        ListNode node11 = new ListNode(2);
-        ListNode node12 = new ListNode(4);
-        ListNode node13 = new ListNode(3);
-
-        node11.next = node12;
-        node12.next = node13;
-
-        ListNode node21 = new ListNode(5);
-        ListNode node22 = new ListNode(6);
-        ListNode node23 = new ListNode(4);
-
-        node21.next = node22;
-        node22.next = node23;
-
-        s.addTwoNumbers(node11, node21).printListNode();
 
     }
 
