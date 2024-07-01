@@ -167,8 +167,6 @@ public class Solution {
         // int[] nums = { 0, 1, 0, 1, 0, 1, 0, 1, 0 };
         // int goal = 4;
         // System.out.println(s.numSubarraysWithSum(nums, goal));
-
-
     }
 
 }
