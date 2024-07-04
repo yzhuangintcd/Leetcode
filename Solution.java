@@ -2,37 +2,6 @@ import java.util.*;
 
 public class Solution {
 
-    public int[] intersect(int[] nums1, int[] nums2) {
-        // check length of each array
-        Hashtable<Integer, Integer> ht = new Hashtable<>();
-        ArrayList<Integer> al = new ArrayList<>();
-        if (nums1.length >= nums2.length) {
-            for (int i = 0; i < nums2.length; i++) {
-                ht.put(nums2[i], ht.getOrDefault(nums2[i], 0) + 1);
-            }
-            for (int i = 0; i < nums1.length; i++) {
-                int count = ht.getOrDefault(nums1[i], 0);
-                if (count > 0) {
-                    al.add(nums1[i]);
-                    ht.put(nums1[i], count - 1);
-                }
-            }
-        } else {
-            for (int i = 0; i < nums1.length; i++) {
-                ht.put(nums1[i], ht.getOrDefault(nums1[i], 0) + 1);
-            }
-            for (int i = 0; i < nums2.length; i++) {
-                int count = ht.getOrDefault(nums2[i], 0);
-                if (count > 0) {
-                    al.add(nums2[i]);
-                    ht.put(nums2[i], count - 1);
-                }
-            }
-        }
-
-        System.out.println(al);
-        return convertToArray(al);
-    }
 
     public static int[] convertToArray(ArrayList<Integer> arrayList) {
         int[] intArray = new int[arrayList.size()];
@@ -183,6 +152,19 @@ public class Solution {
         System.out.println();
     }
 
+    // Helper Function to print out ListNodes
+    public static void printList(ListNode head) {
+        ListNode temp = head;
+        while (temp != null) {
+            System.out.print(temp.val);
+            temp = temp.next;
+            if (temp != null) {
+                System.out.print(" -> ");
+            }
+        }
+        System.out.println();
+    }
+
     public static void main(String[] args) {
         Solution s = new Solution();
         int[] profits = { 1, 2, 2 }; // profit of each projects
@@ -199,10 +181,25 @@ public class Solution {
         // int[] nums = { 0, 1, 0, 1, 0, 1, 0, 1, 0 };
         // int goal = 4;
         // System.out.println(s.numSubarraysWithSum(nums, goal));
-        int[] nums1 = { 1, 2, 2, 1 };
-        int[] nums2 = { 2, 2 };
 
-        s.printArray(s.intersect(nums1, nums2));
+
+        
+        // ListNode node1 = new ListNode(0);
+        // ListNode node2 = new ListNode(0);
+        // ListNode node3 = new ListNode(1);
+        // ListNode node4 = new ListNode(0);
+        // ListNode node5 = new ListNode(4);
+        // ListNode node6 = new ListNode(5);
+        // ListNode node7 = new ListNode(2);
+        // ListNode node8 = new ListNode(0);
+        // node1.next = node2;
+        // node2.next = node3;
+        // node3.next = node4;
+        // node4.next = node5;
+        // node5.next = node6;
+        // node6.next = node7;
+        // node7.next = node8;
+
     }
 
 }
