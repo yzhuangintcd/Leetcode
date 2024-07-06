@@ -2,8 +2,22 @@ import java.util.*;
 
 public class Solution {
 
+    public int passThePillow(int n, int time) {
+        if (n > time) {
+            return time + 1;
+        } else {
 
+            int numberOfPasses = n - 1;
+            int level = time / numberOfPasses;
 
+            if (level % 2 == 0) {
+                return (time % numberOfPasses) + 1;
+            } else
+                return n - (time % numberOfPasses);
+        }
+    }
+
+    // Helper Function to convert an arraylist to an int array
     public static int[] convertToArray(ArrayList<Integer> arrayList) {
         int[] intArray = new int[arrayList.size()];
         for (int i = 0; i < arrayList.size(); i++) {
@@ -183,24 +197,25 @@ public class Solution {
         // int goal = 4;
         // System.out.println(s.numSubarraysWithSum(nums, goal));
 
-        ListNode node1 = new ListNode(2);
-        ListNode node2 = new ListNode(3);
-        ListNode node3 = new ListNode(3);
-        ListNode node4 = new ListNode(2);
+        // ListNode node1 = new ListNode(2);
+        // ListNode node2 = new ListNode(3);
+        // ListNode node3 = new ListNode(3);
+        // ListNode node4 = new ListNode(2);
         // ListNode node5 = new ListNode(3);
         // ListNode node6 = new ListNode(2);
         // ListNode node7 = new ListNode(2);
         // ListNode node8 = new ListNode(2);
         // ListNode node9 = new ListNode(7);
-        node1.next = node2;
-        node2.next = node3;
-        node3.next = node4;
+        // node1.next = node2;
+        // node2.next = node3;
+        // node3.next = node4;
         // node4.next = node5;
         // node5.next = node6;
         // node6.next = node7;
         // node7.next = node8;
         // node8.next = node9;
 
+        System.out.println(s.passThePillow(3, 6));
     }
 
 }
