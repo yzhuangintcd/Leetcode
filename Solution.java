@@ -2,21 +2,6 @@ import java.util.*;
 
 public class Solution {
 
-    public int passThePillow(int n, int time) {
-        if (n > time) {
-            return time + 1;
-        } else {
-
-            int numberOfPasses = n - 1;
-            int level = time / numberOfPasses;
-
-            if (level % 2 == 0) {
-                return (time % numberOfPasses) + 1;
-            } else
-                return n - (time % numberOfPasses);
-        }
-    }
-
     // Helper Function to convert an arraylist to an int array
     public static int[] convertToArray(ArrayList<Integer> arrayList) {
         int[] intArray = new int[arrayList.size()];
@@ -215,7 +200,7 @@ public class Solution {
         // node7.next = node8;
         // node8.next = node9;
 
-        System.out.println(s.passThePillow(3, 6));
+        // System.out.println(s.numWaterBottles(15, 4));
     }
 
 }
