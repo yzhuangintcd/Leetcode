@@ -2,6 +2,20 @@ import java.util.*;
 
 public class Solution {
 
+    public int findTheWinner(int n, int k) {
+        ArrayList<Integer> list = new ArrayList<>();
+        for (int i = 1; i < n + 1; i++) {
+            list.add(i);
+        }
+        while (list.size() != 1) {
+            for (int i = k - 1; i <= list.size(); i += k) {
+                list.remove(i);
+            }
+        }
+
+        return list.get(0);
+    }
+
     // Helper Function to convert an arraylist to an int array
     public static int[] convertToArray(ArrayList<Integer> arrayList) {
         int[] intArray = new int[arrayList.size()];
@@ -200,7 +214,7 @@ public class Solution {
         // node7.next = node8;
         // node8.next = node9;
 
-        // System.out.println(s.numWaterBottles(15, 4));
+        // System.out.println(s.findTheWinner(5, 2));
     }
 
 }
