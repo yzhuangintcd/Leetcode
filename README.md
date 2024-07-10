@@ -7,3 +7,4 @@
 
 - The Solution.java outside of the folders is used for testing and debugging, it also includes some problems that I am currently stuck on.
 
+- The other classes are Leetcode's Data Structures, required for some of the solutions.
