@@ -2,6 +2,23 @@ import java.util.*;
 
 public class Solution {
 
+
+
+    public TreeNode createBinaryTree(int[][] descriptions) {
+        TreeNode node = new TreeNode();
+        HashMap<Integer, Integer> hm = new HashMap<>();
+
+        // find the root
+        for (int i = 0; i < descriptions.length; i++) {
+            for (int j = 0; j < 2; j++) {
+                int count = hm.getOrDefault(descriptions[i][j], 0);
+                hm.put(descriptions[i][j], count + 1);
+            }
+        }
+
+        return node;
+    }
+
     public int findTheWinner(int n, int k) {
         ArrayList<Integer> list = new ArrayList<>();
         for (int i = 1; i < n + 1; i++) {
@@ -12,7 +29,6 @@ public class Solution {
                 list.remove(i);
             }
         }
-
         return list.get(0);
     }
 
@@ -214,7 +230,9 @@ public class Solution {
         // node7.next = node8;
         // node8.next = node9;
 
+        int[][] descriptions = { { 20, 15, 1 }, { 20, 17, 0 }, { 50, 20, 1 }, { 50, 80, 0 }, { 80, 19, 1 } };
 
+        // System.out.println(s.createBinaryTree(descriptions));
     }
 
 }
