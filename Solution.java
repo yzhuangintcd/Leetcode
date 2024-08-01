@@ -3,7 +3,6 @@ import java.util.*;
 public class Solution {
 
 
-
     public TreeNode createBinaryTree(int[][] descriptions) {
         TreeNode node = new TreeNode();
         HashMap<Integer, Integer> hm = new HashMap<>();
@@ -230,8 +229,8 @@ public class Solution {
         // node7.next = node8;
         // node8.next = node9;
 
-        int[][] descriptions = { { 20, 15, 1 }, { 20, 17, 0 }, { 50, 20, 1 }, { 50, 80, 0 }, { 80, 19, 1 } };
-
+        // int[][] descriptions = { { 20, 15, 1 }, { 20, 17, 0 }, { 50, 20, 1 }, { 50,
+        // 80, 0 }, { 80, 19, 1 } };
         // System.out.println(s.createBinaryTree(descriptions));
     }
 
