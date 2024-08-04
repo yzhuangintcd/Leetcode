@@ -2,6 +2,7 @@ import java.util.*;
 
 public class Solution {
 
+
     public TreeNode createBinaryTree(int[][] descriptions) {
         TreeNode node = new TreeNode();
         HashMap<Integer, Integer> hm = new HashMap<>();
@@ -195,15 +196,15 @@ public class Solution {
 
     public static void main(String[] args) {
         Solution s = new Solution();
-        int[] profits = { 1, 2, 2 }; // profit of each projects
-        int[] capital = { 0, 1, 1 }; // capital of each projects
-        int k = 2; // number of projects
-        int w = 0; // initial capital
 
-        int[] customers = { 1, 0, 1, 2, 1, 1, 7, 5 };
-        int[] grumpy = { 0, 1, 0, 1, 0, 1, 0, 1 };
-        int minutes = 3;
+        // int[] profits = { 1, 2, 2 }; // profit of each projects
+        // int[] capital = { 0, 1, 1 }; // capital of each projects
+        // int k = 2; // number of projects
+        // int w = 0; // initial capital
 
+        // int[] customers = { 1, 0, 1, 2, 1, 1, 7, 5 };
+        // int[] grumpy = { 0, 1, 0, 1, 0, 1, 0, 1 };
+        // int minutes = 3;
         // System.out.println(s.maxSatisfied(customers, grumpy, minutes));
 
         // int[] nums = { 0, 1, 0, 1, 0, 1, 0, 1, 0 };
