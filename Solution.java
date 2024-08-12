@@ -2,7 +2,6 @@ import java.util.*;
 
 public class Solution {
 
-
     public TreeNode createBinaryTree(int[][] descriptions) {
         TreeNode node = new TreeNode();
         HashMap<Integer, Integer> hm = new HashMap<>();
@@ -194,9 +193,7 @@ public class Solution {
         System.out.println();
     }
 
-    public static void main(String[] args) {
-        Solution s = new Solution();
-
+    void main(String[] args) {
         // int[] profits = { 1, 2, 2 }; // profit of each projects
         // int[] capital = { 0, 1, 1 }; // capital of each projects
         // int k = 2; // number of projects
