@@ -2,6 +2,13 @@ import java.util.*;
 
 public class Solution {
 
+
+    public List<List<Integer>> combinationSum2(int[] candidates, int target) {
+        List<List<Integer>> answer = new ArrayList<List<Integer>>();
+        
+        return answer;
+    }
+
     public TreeNode createBinaryTree(int[][] descriptions) {
         TreeNode node = new TreeNode();
         HashMap<Integer, Integer> hm = new HashMap<>();
