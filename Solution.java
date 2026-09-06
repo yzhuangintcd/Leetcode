@@ -2,6 +2,9 @@ import java.util.*;
 
 public class Solution {
 
+    public int getSum(int a, int b) {
+        return 0;
+    }
 
     public List<List<Integer>> combinationSum2(int[] candidates, int target) {
         List<List<Integer>> answer = new ArrayList<List<Integer>>();
@@ -201,6 +204,12 @@ public class Solution {
     }
 
     void main(String[] args) {
+        int [] set = {1, 2, 3};
+        ArrayList<int[]> list = new ArrayList<>();
+        ArrayList<Integer> temp = new ArrayList<>();
+        for (Integer i : set){
+            temp.add(i);
+        }
         // int[] profits = { 1, 2, 2 }; // profit of each projects
         // int[] capital = { 0, 1, 1 }; // capital of each projects
         // int k = 2; // number of projects

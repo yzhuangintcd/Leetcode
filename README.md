@@ -2,6 +2,7 @@
 
 # The Solutions are organised in their own individual folder
 **_NOTE:_**  Most of the solutions are in Java
+(Will be adding Python solutions too)
 
 - The folders follows a structure of: "Problem Number. Problem Name".
 
